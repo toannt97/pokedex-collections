@@ -1,4 +1,9 @@
 $color-page-bg: #e8ecec;
+$content-width: 1000px;
+$content-padding-inline: 20px;
+// From this window width the stacked floating buttons (New group is ~125px wide) fit beside the
+// content with a 16px gap and 24px to the window edge, leaving room for a scrollbar.
+$floating-beside-content-min-width: 1360px;
 
 .layout {
   background-color: $color-page-bg;
@@ -9,10 +14,16 @@ $color-page-bg: #e8ecec;
   &__content {
     flex: 1;
     margin: 0 auto;
-    // 1000px of content plus 20px padding on each side.
-    max-width: 1040px;
-    padding: 40px 20px;
+    max-width: $content-width + 2 * $content-padding-inline;
+    // The bottom leaves room for the floating buttons (40px tall, 24px above the footer) plus a
+    // 24px gap, so at the end of the page they don't cover the last content.
+    padding: 40px $content-padding-inline 88px;
     width: 100%;
+
+    // Wide windows put the floating buttons beside the content, so it doesn't need that room.
+    @media only screen and (min-width: $floating-beside-content-min-width) {
+      padding-bottom: 40px;
+    }
   }
 
   // Zero-height bar between the content and the footer; its buttons extend upward out of it.
@@ -29,6 +40,13 @@ $color-page-bg: #e8ecec;
     position: sticky;
     transform: translateY(-24px);
     z-index: 10;
+
+    // Stack the buttons in the space right of the content, 16px from its edge.
+    @media only screen and (min-width: $floating-beside-content-min-width) {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 0 0 0 calc(50% + #{$content-width * 0.5} + 16px);
+    }
   }
 
   &__floating-slot {

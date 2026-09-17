@@ -1,0 +1,45 @@
+$color-text: #202020;
+$color-text-muted: #6b6b6b;
+$color-accent: #0f7c83;
+
+.pokemon-groups-modal {
+  &__sprite {
+    height: 100%;
+    image-rendering: pixelated;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  &__name {
+    text-transform: capitalize;
+  }
+
+  &__option {
+    align-items: center;
+    color: $color-text;
+    cursor: pointer;
+    display: flex;
+    font-size: 15px;
+    gap: 12px;
+    padding: 10px 0;
+
+    &:has(:disabled) {
+      color: $color-text-muted;
+      cursor: not-allowed;
+    }
+  }
+
+  &__checkbox {
+    accent-color: $color-accent;
+    cursor: inherit;
+    flex-shrink: 0;
+    height: 18px;
+    width: 18px;
+  }
+
+  &__empty {
+    color: $color-text-muted;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+}

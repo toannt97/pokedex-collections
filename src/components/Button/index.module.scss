@@ -1,0 +1,54 @@
+$color-accent: #0f7c83;
+$color-accent-hover: #0b6167;
+$color-on-accent: #fff;
+$color-bg: #fff;
+$color-border: #dde3e4;
+$color-text: #3f4a4c;
+$color-hover-bg: #eef2f2;
+
+.button {
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  height: 40px;
+  justify-content: center;
+  padding: 0 20px;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+  white-space: nowrap;
+
+  &:focus-visible {
+    outline: 2px solid $color-accent;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &--primary {
+    background-color: $color-accent;
+    color: $color-on-accent;
+
+    &:hover:not(:disabled) {
+      background-color: $color-accent-hover;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-bg;
+    border: 1px solid $color-border;
+    color: $color-text;
+    font-weight: 500;
+
+    &:hover:not(:disabled) {
+      background-color: $color-hover-bg;
+    }
+  }
+}

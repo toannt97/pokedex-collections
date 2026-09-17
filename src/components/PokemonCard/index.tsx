@@ -44,7 +44,9 @@ export const PokemonCard = ({
         />
       </button>
     </div>
-    <h3 className={styles["pokemon-card__name"]}>{name}</h3>
-    <p className={styles["pokemon-card__number"]}>#{String(id).padStart(4, "0")}</p>
+    <div className={styles["pokemon-card__info"]}>
+      <h3 className={styles["pokemon-card__name"]}>{name}</h3>
+      <p className={styles["pokemon-card__number"]}>#{String(id).padStart(4, "0")}</p>
+    </div>
   </article>
 );

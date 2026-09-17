@@ -1,0 +1,37 @@
+@use "../../styles/mixin" as *;
+
+$color-text-muted: #56707a;
+$color-accent: #0f7c83;
+
+.collections-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__cards {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+
+    @include sp {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  &__empty {
+    color: $color-text-muted;
+    font-size: 14px;
+  }
+
+  &__empty-state {
+    color: $color-text-muted;
+    font-size: 15px;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  &__link {
+    color: $color-accent;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,22 @@
+@use "../../styles/mixin" as *;
+
+$color-text-muted: #6b6b6b;
+
+.explore-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__search {
+    @include pc {
+      max-width: 360px;
+    }
+  }
+
+  &__empty {
+    color: $color-text-muted;
+    font-size: 14px;
+    padding: 40px 0;
+    text-align: center;
+  }
+}

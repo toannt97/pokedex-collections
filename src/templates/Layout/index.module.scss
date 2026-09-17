@@ -1,0 +1,17 @@
+$color-page-bg: #e8ecec;
+
+.layout {
+  background-color: $color-page-bg;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+
+  &__content {
+    flex: 1;
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 40px 20px;
+    width: 100%;
+  }
+}

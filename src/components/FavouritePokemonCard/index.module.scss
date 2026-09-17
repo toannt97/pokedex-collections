@@ -10,6 +10,8 @@ $color-accent: #0f7c83;
 $font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
 .favourite-pokemon-card {
+  $root: &;
+
   background-color: $color-bg;
   border: 1px solid $color-border;
   border-radius: 16px;
@@ -18,6 +20,13 @@ $font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   // Fills the grid cell so every card in a row is as tall as the tallest one.
   height: 100%;
   padding: 14px;
+
+  &:hover {
+    #{$root}__image {
+      transform: scale(1.2);
+      transition: transform 0.5s ease-out;
+    }
+  }
 
   &__sprite {
     align-items: center;

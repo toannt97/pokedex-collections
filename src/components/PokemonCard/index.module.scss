@@ -10,6 +10,8 @@ $color-favourite-bg: #fdebd3;
 $color-favourite-border: #e9b877;
 
 .pokemon-card {
+  $root: &;
+
   background-color: $color-bg;
   border: 1px solid $color-border;
   border-radius: 16px;
@@ -18,6 +20,13 @@ $color-favourite-border: #e9b877;
   // Fills the grid cell so every card in a row is as tall as the tallest one.
   height: 100%;
   padding: 14px;
+
+  &:hover {
+    #{$root}__image {
+      transform: scale(1.2);
+      transition: transform 0.5s ease-out;
+    }
+  }
 
   &__sprite {
     align-items: center;

@@ -1,0 +1,23 @@
+$color-bg: #fff;
+$color-border: #e3e8e9;
+$color-text-muted: #5f6b6d;
+$color-accent: #0f7c83;
+
+.footer {
+  background-color: $color-bg;
+  border-top: 1px solid $color-border;
+  color: $color-text-muted;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 24px 16px;
+  text-align: center;
+
+  &__link {
+    color: $color-accent;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

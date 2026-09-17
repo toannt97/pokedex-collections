@@ -1,0 +1,14 @@
+/* Breakpoints */
+$pc-break-point: 768;
+
+@mixin pc {
+  @media only screen and (min-width: #{$pc-break-point + 1px}) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media only screen and (max-width: #{$pc-break-point + 0.98px}) {
+    @content;
+  }
+}

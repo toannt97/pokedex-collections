@@ -12,3 +12,17 @@ $pc-break-point: 768;
     @content;
   }
 }
+
+// Grows the clickable area to at least $size in each direction without changing how the element
+// looks. The element must be positioned (relative or absolute) so the area is centred on it.
+@mixin hit-area($size: 40px) {
+  &::before {
+    content: "";
+    height: max(100%, #{$size});
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: max(100%, #{$size});
+  }
+}

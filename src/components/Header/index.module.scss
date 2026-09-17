@@ -1,0 +1,44 @@
+$color-bg: #fff;
+$color-text: #202020;
+$color-text-muted: #6b6b6b;
+$color-accent: #0f7c83;
+
+.header {
+  align-items: center;
+  background-color: $color-bg;
+  display: flex;
+  gap: 24px;
+  height: 60px;
+  padding: 0 48px;
+
+  &__title {
+    color: $color-text;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__link {
+    border-bottom: 2px solid transparent;
+    color: $color-text-muted;
+    display: block;
+    font-size: 16px;
+    padding: 4px 0 2px;
+    transition:
+      color 0.2s,
+      border-color 0.2s;
+
+    &:hover {
+      color: $color-text;
+    }
+
+    &[aria-current="page"] {
+      border-color: $color-accent;
+      color: $color-text;
+    }
+  }
+}

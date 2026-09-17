@@ -1,0 +1,10 @@
+$color-text-muted: #6b6b6b;
+
+.new-group-modal {
+  &__hint {
+    color: $color-text-muted;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 8px;
+  }
+}

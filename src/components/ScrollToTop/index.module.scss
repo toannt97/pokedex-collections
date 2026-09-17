@@ -1,0 +1,39 @@
+$color-bg: #fff;
+$color-border: #e3e8e9;
+$color-shadow: #202020;
+$color-hover-bg: #eef2f2;
+$color-accent: #0f7c83;
+
+.scroll-to-top {
+  align-items: center;
+  background-color: $color-bg;
+  border: 1px solid $color-border;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba($color-shadow, 0.08);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  transition: background-color 0.2s;
+  width: 40px;
+
+  &:hover {
+    background-color: $color-hover-bg;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-accent;
+    outline-offset: 2px;
+  }
+
+  &__icon {
+    background-image: url("@assets/icons/arrow-up-icon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height: 16px;
+    width: 16px;
+  }
+}

@@ -1,0 +1,113 @@
+@use "../../styles/mixin" as *;
+
+$color-bg: #fff;
+$color-border: #dde3e4;
+$color-text: #202020;
+$color-text-muted: #6b6b6b;
+$color-accent: #0f7c83;
+$color-error: #c62828;
+$color-hover-bg: #eef2f2;
+
+.text-input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  &__label {
+    color: $color-text-muted;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__field {
+    align-items: center;
+    background-color: $color-bg;
+    border: 1px solid $color-border;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 4px;
+    height: 40px;
+    padding: 0 8px 0 12px;
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
+
+    &:focus-within {
+      border-color: $color-accent;
+      box-shadow: 0 0 0 3px rgba($color-accent, 0.15);
+    }
+
+    &--error,
+    &--error:focus-within {
+      border-color: $color-error;
+    }
+
+    &--error:focus-within {
+      box-shadow: 0 0 0 3px rgba($color-error, 0.15);
+    }
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    color: $color-text;
+    flex: 1;
+    font: inherit;
+    font-size: 14px;
+    height: 100%;
+    min-width: 0;
+    outline: none;
+
+    &::placeholder {
+      color: $color-text-muted;
+    }
+
+    &::-webkit-search-cancel-button {
+      appearance: none;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &__clear {
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    height: 24px;
+    justify-content: center;
+    position: relative;
+    width: 24px;
+    @include hit-area;
+
+    &:hover {
+      background-color: $color-hover-bg;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-accent;
+    }
+  }
+
+  &__clear-icon {
+    background-image: url("@assets/icons/clear-icon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height: 12px;
+    width: 12px;
+  }
+
+  &__error {
+    color: $color-error;
+    font-size: 12px;
+  }
+}

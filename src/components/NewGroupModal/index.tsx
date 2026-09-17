@@ -15,7 +15,6 @@ type NewGroupModalProps = {
 
 export const NewGroupModal = ({ existingGroupNames, onClose, onCreate }: NewGroupModalProps) => {
   const formId = useId();
-  const hintId = useId();
   const [name, setName] = useState("");
 
   const trimmedName = name.trim();
@@ -54,14 +53,9 @@ export const NewGroupModal = ({ existingGroupNames, onClose, onCreate }: NewGrou
           maxLength={MAX_NAME_LENGTH}
           autoComplete="off"
           errorMessage={errorMessage}
-          aria-describedby={errorMessage ? undefined : hintId}
           data-autofocus
         />
-        {!errorMessage && (
-          <p id={hintId} className={styles["new-group-modal__hint"]}>
-            Up to {MAX_NAME_LENGTH} characters.
-          </p>
-        )}
+        <p className={styles["new-group-modal__hint"]}>Up to {MAX_NAME_LENGTH} characters.</p>
       </form>
     </Modal>
   );
